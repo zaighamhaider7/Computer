@@ -198,6 +198,10 @@ console.log(parseproduct);
             </div>
      `
         }
+              document.getElementById("viewmore").addEventListener("click",()=>{
+        document.getElementById("viewmore").style.display="none";
+        document.getElementById("viewless").style.display="block";
+        document.querySelector(".row-two").style.display="flex"
         for (let i = 6; i < 12; i++) {
           document.querySelector(".row-two").innerHTML +=
               `
@@ -210,33 +214,15 @@ console.log(parseproduct);
        </div>
           </div>
    `
-      }
-
-
-      document.getElementById("viewmore").addEventListener("click",()=>{
-        document.getElementById("viewmore").style.display="none";
-        document.getElementById("viewless").style.display="block";
-        document.querySelector(".row-three").style.display="flex"
-        for (let i = 12; i < 18 ; i++) {
-          document.querySelector(".row-three").innerHTML +=
-              `
-          <div class="col col-lg-4 col-md-6 col-sm-6 mt-3">
-           <div class="card" style="width: 18rem; height: 18rem;">
-           <img src="${parseproduct[i].image}" class="card-img-top" alt="...">
-          <div class="card-body">
-         <h4 class="card-title">${parseproduct[i].title}</h4>
-        </div>
-       </div>
-          </div>
-   `
-      }
-      });
-
+      }})
+  
+    
+      
 
       document.getElementById("viewless").addEventListener("click",()=>{
         document.getElementById("viewmore").style.display="block";
         document.getElementById("viewless").style.display="none";
-        document.querySelector(".row-three").style.display="none"
+        document.querySelector(".row-two").style.display="none"
       })
 
 
