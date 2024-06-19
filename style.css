@@ -210,6 +210,9 @@ html{
     height: 130px;
     width: auto;
 }
+#viewless{
+    display: none;
+}
 
 
 
