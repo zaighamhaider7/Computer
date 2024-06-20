@@ -186,18 +186,18 @@ let parseproduct = JSON.parse(products);
 console.log(parseproduct);
 
 for (let i = 0; i < 1 ; i++) {
-document.querySelector(".row").innerHTML =`
+document.querySelector(".row").innerHTML +=`
 <div class="col">
         <img src="./M_keyboard_page.webp" height="400px" width="auto">
       </div>
       <div class="col p-detail">
       <h2>${parseproduct[i].title}</h2>
         <h4>${parseproduct[i].description}</h4>
-        <h5>Rs. ${parseproduct[i].price}</h5>
-        <div class="qty">
-           <button id="minus" class="qty-btn"><i class="fa-solid fa-minus"></i></button>
-      <span id="qty">1</span>
-      <button id="plus" class="qty-btn"><i class="fa-solid fa-plus"></i></button>
+        <h5 class="price">${parseproduct[i].price}</h5>
+        <div class="qty-flex">
+           <button class="qty-btn minus"><i class="fa-solid fa-minus"></i></button>
+      <span class="qty">1</span>
+      <button class="qty-btn plus"><i class="fa-solid fa-plus"></i></button>
         </div>
         <div class="btn-flex">
           <button class="product-btn">
@@ -212,27 +212,37 @@ document.querySelector(".row").innerHTML =`
 }
 
 
-// quantity 
-let plus = document.getElementById("plus");
-let minus = document.getElementById("minus");
-let qty = document.getElementById("qty");
-// let price = document.getElementById("price");
+// quantity  and price calculation
+  let plus = document.querySelector(".plus");
+  let minus = document.querySelector(".minus");
+  let qty = document.querySelector(".qty");
+  let priceDisplay = document.querySelector(".price");
 
-let i = 0;
+  let quantity = 1;
+  let pricePerItem = parseFloat(priceDisplay.innerText);
+  function updatePrice() {
+    const totalPrice = quantity * pricePerItem;
+    priceDisplay.innerText = "Rs. $"+ totalPrice.toFixed(2); 
+  }
 
-plus.addEventListener("click", () => {
-    i++;
-    let x = qty.innerHTML = i
-    console.log(x);
-})
-minus.addEventListener("click", () => {
-   if(i>=2){
-    i--;
-    let x = qty.innerHTML=i
-    console.log(x)
-   }
-   else{
-    let x = qty.innerHTML = 1
-    console.log(x)
-   }
-})
+  plus.addEventListener("click", () => {
+    quantity++;
+    qty.textContent = quantity;
+    updatePrice();
+  });
+
+  minus.addEventListener("click", () => {
+    if (quantity > 1) {
+      quantity--;
+    } else {
+      quantity = 1; 
+    }
+    qty.textContent = quantity;
+    updatePrice();
+  });
+
+  updatePrice();
+
+
+
+

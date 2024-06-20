@@ -52,18 +52,18 @@ html{
     gap: 1.5em;
     padding: 2% 2%;
 }
-.qty{
+.qty-flex{
     display: flex !important;
     align-items: center;
     gap: 0.5em;
     height: 2em;
     width: 5.5em;
-    background-color: beige;
+    background-color: beige !important;
 }
 .qty-btn{
     height: 2em;
     width: 2em;
-    background-color: transparent;
+    background-color: transparent !important;
     border: none;
     transition: 0.3s;
 }
