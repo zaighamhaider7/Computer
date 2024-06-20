@@ -213,36 +213,37 @@ document.querySelector(".row").innerHTML +=`
 
 
 // quantity  and price calculation
-  let plus = document.querySelector(".plus");
-  let minus = document.querySelector(".minus");
-  let qty = document.querySelector(".qty");
-  let priceDisplay = document.querySelector(".price");
-
-  let quantity = 1;
-  let pricePerItem = parseFloat(priceDisplay.innerText);
-  function updatePrice() {
-    const totalPrice = quantity * pricePerItem;
-    priceDisplay.innerText = "Rs. $"+ totalPrice.toFixed(2); 
-  }
-
-  plus.addEventListener("click", () => {
-    quantity++;
-    qty.textContent = quantity;
-    updatePrice();
-  });
-
-  minus.addEventListener("click", () => {
-    if (quantity > 1) {
-      quantity--;
-    } else {
-      quantity = 1; 
-    }
-    qty.textContent = quantity;
-    updatePrice();
-  });
-
-  updatePrice();
-
-
-
+    const cards = document.querySelectorAll(".p-detail");  
+    cards.forEach(card => {
+      const plus = card.querySelector(".plus");
+      const minus = card.querySelector(".minus");
+      const qty = card.querySelector(".qty");
+      const priceDisplay = card.querySelector(".price");
+  
+      let quantity = 1;
+      const pricePerItem = parseFloat(priceDisplay.innerText);
+  
+      function updatePrice() {
+        const totalPrice = quantity * pricePerItem;
+        priceDisplay.innerText = `Rs. $${totalPrice.toFixed(2)}`;
+      }
+  
+      plus.addEventListener("click", () => {
+        quantity++;
+        qty.textContent = quantity;
+        updatePrice();
+      });
+  
+      minus.addEventListener("click", () => {
+        if (quantity > 1) {
+          quantity--;
+        }
+        qty.textContent = quantity;
+        updatePrice();
+      });
+  
+      // Initial update
+      updatePrice();
+    });
+  
 
