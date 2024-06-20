@@ -1,5 +1,3 @@
-
-
 let products = ` [
     {
       "image": "Mechanical Keyboard.webp",
@@ -184,136 +182,57 @@ let products = ` [
 }
       ]
 `
-let parseproduct = JSON.parse(products)
+let parseproduct = JSON.parse(products);
 console.log(parseproduct);
-for (let i = 0; i < 6; i++) {
-  document.querySelector(".row-one").innerHTML +=
-    `
-            <div class="col col-lg-4 col-md-6 col-sm-6 mt-3">
-             <div class="card">
-             <img src="${parseproduct[i].image}" class="card-img-top" alt="Product imagessss...">
-            <div class="card-body">
-        <a href="${parseproduct[i].Product_Page}"><h4 class="card-title">${parseproduct[i].title}</h4></a>
-        <h5>Rs.${parseproduct[i].price}</h5>
-          </div>
-         </div>
-            </div>
-     `
+
+for (let i = 0; i < 1 ; i++) {
+document.querySelector(".row").innerHTML =`
+<div class="col">
+        <img src="./M_keyboard_page.webp" height="400px" width="auto">
+      </div>
+      <div class="col p-detail">
+      <h2>${parseproduct[i].title}</h2>
+        <h4>${parseproduct[i].description}</h4>
+        <h5>Rs. ${parseproduct[i].price}</h5>
+        <div class="qty">
+           <button id="minus" class="qty-btn"><i class="fa-solid fa-minus"></i></button>
+      <span id="qty">1</span>
+      <button id="plus" class="qty-btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="btn-flex">
+          <button class="product-btn">
+            Buy Now
+          </button>
+          <button class="product-btn">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+`
 }
-//             document.getElementById("viewmore").addEventListener("click",()=>{
-//       document.getElementById("viewmore").style.display="none";
-//       document.getElementById("viewless").style.display="block";
-//       document.querySelector(".row-two").style.display="flex"
-//       for (let i = 6; i < 12; i++) {
-//         document.querySelector(".row-two").innerHTML +=
-//             `
-//         <div class="col col-lg-4 col-md-6 col-sm-6 mt-3">
-//          <div class="card" style="width: 18rem; height: 18rem;">
-//          <img src="${parseproduct[i].image}" class="card-img-top" alt="Product imagessss...">
-//         <div class="card-body">
-//       <a href="store.html"><h4 class="card-title">${parseproduct[i].title}</h4></a>
-//       <h5>Rs.${parseproduct[i].price}</h5>
-//       </div>
-//      </div>
-//         </div>
-//  `
-//     }})
 
-let productsShown = false;  // Add a flag to check if products have already been shown
 
-document.getElementById("viewmore").addEventListener("click", () => {
-  if (!productsShown) {  // Check if products have not been shown yet
-    console.log('View More button clicked.'); // Debug log
+// quantity 
+let plus = document.getElementById("plus");
+let minus = document.getElementById("minus");
+let qty = document.getElementById("qty");
+// let price = document.getElementById("price");
 
-    document.getElementById("viewmore").style.display = "none";
-    document.getElementById("viewless").style.display = "block";
-    document.querySelector(".row-two").style.display = "flex";
+let i = 0;
 
-    if (!Array.isArray(parseproduct) || parseproduct.length < 12) {
-      console.error('parseproduct array is not valid or does not have enough items.');
-      return;
-    }
-
-    // Add the products to the container
-    for (let i = 6; i < 12; i++) {
-      if (!parseproduct[i]) {
-        console.error(`Product at index ${i} is not defined.`);
-        continue;
-      }
-
-      const productHTML = `
-                  <div class="col col-lg-4 col-md-6 col-sm-6 mt-3 product-item">
-                      <div class="card" style="width: 18rem; height: 18rem;">
-                          <img src="${parseproduct[i].image}" class="card-img-top" alt="Product image">
-                          <div class="card-body">
-                              <a href="store.html"><h4 class="card-title">${parseproduct[i].title}</h4></a>
-                              <h5>Rs.${parseproduct[i].price}</h5>
-                          </div>
-                      </div>
-                  </div>
-              `;
-
-      document.querySelector(".row-two").innerHTML += productHTML;
-    }
-
-    productsShown = true;  // Set the flag to true after showing the products
-  } else {
-    document.querySelector(".row-two").style.display = "flex";
-    document.getElementById("viewmore").style.display = "none";
-    document.getElementById("viewless").style.display = "block";
-  }
-});
-// view less button
-  document.getElementById("viewless").addEventListener("click", () => {
-  document.getElementById("viewmore").style.display = "block";
-  document.getElementById("viewless").style.display = "none";
-  document.querySelector(".row-two").style.display = "none"
+plus.addEventListener("click", () => {
+    i++;
+    let x = qty.innerHTML = i
+    console.log(x);
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let link = "https://fakestoreapi.com/products"
-// fetch(link)
-// .then(Response => Response.json())
-//     .then(data => {
-//  console.log(data);
-//        for (let i = 6; i < 12; i++) {
-//             document.querySelector(".row-two").innerHTML +=
-//                 `
-//             <div class="col col-lg-4 col-md-6 col-sm-6 mt-3">
-//              <div class="card">
-//              <img src="${data[i].image}" class="card-img-top" alt="...">
-//              <div class="card-body">
-//              <h4 class="card-title">${data[i].title}</h4>
-//               </div>
-//              </div>
-//             </div>
-//        `
-//         }
-//       })
-//     .catch(error => {
-//         console.log(error);
-//     })
+minus.addEventListener("click", () => {
+   if(i>=2){
+    i--;
+    let x = qty.innerHTML=i
+    console.log(x)
+   }
+   else{
+    let x = qty.innerHTML = 1
+    console.log(x)
+   }
+})

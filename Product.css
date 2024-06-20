@@ -1,0 +1,96 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+#computer{
+    color: blue;
+    font-size: 1.8rem;
+    cursor: pointer;
+    font-style: italic;
+    font-weight: bold;
+}
+#accessories{
+    font-size: 1rem;
+    cursor: pointer;
+    font-style: italic;
+    font-weight: bold;
+}
+.nav-item  a{
+    font-size: 1.2rem !important;
+    margin-left: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: blue;
+ }
+ .nav-item a:hover{
+    color: black;
+    text-decoration: underline blue;
+}
+@media(max-width:400px){
+    #computer{
+        color: blue;
+        font-size: 1.5rem;
+        cursor: pointer;
+        font-style: italic;
+        font-weight: bold;
+    }
+    #accessories{
+        font-size: 0.8rem;
+        cursor: pointer;
+        font-style: italic;
+        font-weight: bold;
+    }
+}
+
+.p-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 2% 2%;
+}
+.qty{
+    display: flex !important;
+    align-items: center;
+    gap: 0.5em;
+    height: 2em;
+    width: 5.5em;
+    background-color: beige;
+}
+.qty-btn{
+    height: 2em;
+    width: 2em;
+    background-color: transparent;
+    border: none;
+    transition: 0.3s;
+}
+.qty-btn:hover{
+    border: 1px solid black;
+
+}
+.btn-flex{
+display: flex;
+gap: 2em;
+}
+.btn-flex .product-btn{
+    height: 2.5em;
+    width: 10em;
+    background-color: transparent;
+    border: 2px solid blue;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    transition: 0.6s;
+}
+.btn-flex .product-btn:hover{
+    border: 2px solid black;
+    background-color: blue;
+    color: white;
+}
+.row{
+    box-shadow: 0px 0px 20px 0px rgba(128, 128, 128, 0.249);
+    border-radius: 16px;
+}

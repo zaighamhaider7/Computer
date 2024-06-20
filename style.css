@@ -1,5 +1,7 @@
  body{
     margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
 }
 html{
     scroll-behavior: smooth;
@@ -54,6 +56,7 @@ html{
     align-items: center;
     box-shadow: 0px 0px 50px 0px rgba(128, 128, 128, 0.381);
    border-radius: 16px !important;
+   margin-top: 1em;
 }
 .carousel-inner{
     overflow: hidden !important;
@@ -198,17 +201,35 @@ html{
     align-items: center;
 }
 .col .card{
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center;
+    text-align: left;
     padding: 2% 2%;
-    height: 15rem !important;
+    /* height: 15em !important; */
     width: 18rem !important;
+    transition: 0.6s;
+}
+.col .card:hover{
+    box-shadow: 2px 0px 20px 2px rgba(128, 128, 128, 0.381);
+    z-index: 9999;
+    cursor: pointer;
 }
 .col img{
     height: 130px;
     width: auto;
+    margin: 0% auto;
+}
+.col .card a{
+    margin-top: 50em;
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.col .card a:hover{
+    text-decoration: underline !important;
+    color: #0000EE;;
+}
+.col .card h5{
+    margin-top: 1em;
+    color: black;
 }
 #viewless{
     display: none;
