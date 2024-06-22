@@ -25,9 +25,7 @@ document.getElementById("login-btn").addEventListener("click", () => {
         document.getElementById("form2Example2").style.border = "2px solid red"
     }
     else if (document.getElementById("form2Example1").value == "" && document.getElementById("form2Example2").value == "") {
-        document.getElementById("msg").innerHTML = "please fill out this field"
-        document.getElementById("form2Example1").style.border = "2px solid red"
-        document.getElementById("form2Example2").style.border = "2px solid red"
+        document.getElementById("msg").innerHTML = "please fill out this fields"
         console.log("empty")
     }
     else if (!email && !pass) {
