@@ -19,6 +19,7 @@ document.getElementById("signup-btn").addEventListener("click",()=>{
 
     if(namematch && emailmatch && passmatch && agematch){
         console.log("correct");
+        window.location.href = "index.html"
         document.getElementById("nameerror").innerText = ""
         document.getElementById("emailerror").innerText = ""
         document.getElementById("passerror").innerText = ""

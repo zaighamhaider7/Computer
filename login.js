@@ -9,29 +9,38 @@ document.getElementById("login-btn").addEventListener("click", () => {
     let pass = document.getElementById("form2Example2").value.match(passwordpattern)
 
     if (email && pass) {
-        window.location.href = "next.html"
-        console.log("err");
+        window.location.href = "index.html"
+        document.getElementById("msg").innerText = ""
+        document.getElementById("passerror").innerText = ""
+        document.getElementById("emailerror").innerText = ""
+        document.getElementById("form2Example1").style.border = ""
+        document.getElementById("form2Example2").style.border = ""
     }
     else if (!email && pass) {
-        document.getElementById("emailerror").innerHTML = "incorrect email"
-        document.getElementById("passerror").innerHTML = ""
-        document.getElementById("msg").innerHTML = ""
+        document.getElementById("emailerror").innerText = "incorrect email"
+        document.getElementById("passerror").innerText = ""
+        document.getElementById("msg").innerText = ""
         document.getElementById("form2Example1").style.border = "2px solid red"
+        document.getElementById("form2Example2").style.border = "2px solid black"
     }
     else if (email && !pass) {
-        document.getElementById("passerror").innerHTML = "incorrect pass"
-        document.getElementById("emailerror").innerHTML = ""
-        document.getElementById("msg").innerHTML = ""
+        document.getElementById("passerror").innerText = "incorrect pass"
+        document.getElementById("emailerror").innerText = ""
+        document.getElementById("msg").innerText = ""
         document.getElementById("form2Example2").style.border = "2px solid red"
+        document.getElementById("form2Example1").style.border = "2px solid black"
     }
     else if (document.getElementById("form2Example1").value == "" && document.getElementById("form2Example2").value == "") {
-        document.getElementById("msg").innerHTML = "please fill out this fields"
-        console.log("empty")
+        document.getElementById("msg").innerText = "please fill out this fields"
+        document.getElementById("passerror").innerText = ""
+        document.getElementById("emailerror").innerText = ""
+        document.getElementById("form2Example1").style.border = ""
+        document.getElementById("form2Example2").style.border = ""
     }
     else if (!email && !pass) {
-        document.getElementById("msg").innerHTML = "incorrect Email or Password"
-        document.getElementById("passerror").innerHTML = ""
-        document.getElementById("emailerror").innerHTML = ""
+        document.getElementById("msg").innerText = "incorrect Email or Password"
+        document.getElementById("passerror").innerText = ""
+        document.getElementById("emailerror").innerText = ""
         document.getElementById("form2Example1").style.border = "2px solid red"
         document.getElementById("form2Example2").style.border = "2px solid red"
 
