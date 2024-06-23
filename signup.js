@@ -66,11 +66,11 @@ document.getElementById("signup-btn").addEventListener("click",()=>{
         document.getElementById("ageerror").innerText = ""
         document.getElementById("msg").innerText = ""
     }
-    // if name,email & age is incorrect 
-    else if(!namematch && !emailmatch && passmatch && !agematch){
-        document.getElementById("nameerror").innerText = "Must start with a letter"
+    // if email,password & age is incorrect 
+    else if(namematch && !emailmatch && !passmatch && !agematch){
+        document.getElementById("nameerror").innerText = ""
         document.getElementById("emailerror").innerText = "Incorrect Email"
-        document.getElementById("passerror").innerText = ""
+        document.getElementById("passerror").innerText = "minimum 8 Character with a num & letter"
         document.getElementById("ageerror").innerText = "You must be 18 or older"
         document.getElementById("msg").innerText = ""
     }
@@ -79,6 +79,14 @@ document.getElementById("signup-btn").addEventListener("click",()=>{
         document.getElementById("nameerror").innerText = "Must start with a letter"
         document.getElementById("emailerror").innerText = ""
         document.getElementById("passerror").innerText = "minimum 8 Character with a num & letter"
+        document.getElementById("ageerror").innerText = "You must be 18 or older"
+        document.getElementById("msg").innerText = ""
+    }
+      // if name,email & age is incorrect 
+      else if(!namematch && !emailmatch && passmatch && !agematch){
+        document.getElementById("nameerror").innerText = "Must start with a letter"
+        document.getElementById("emailerror").innerText = "Incorrect Email"
+        document.getElementById("passerror").innerText = ""
         document.getElementById("ageerror").innerText = "You must be 18 or older"
         document.getElementById("msg").innerText = ""
     }

@@ -58,8 +58,18 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80vh;
+    height: 85vh;
     width: 100%;
+}
+@media(max-width:1024px){
+    #signup-outer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        margin-bottom: 1em;
+    }
 }
 @media(max-width:990px){
    #signup-outer{
@@ -133,6 +143,9 @@ select{
         width: 16em;
         border: 2px solid black;
        border-radius: 8px;
+    }
+    .error{
+        width: 16em;
     }
 }
 #signup-btn{
