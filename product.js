@@ -185,8 +185,8 @@ let products = ` [
 let parseproduct = JSON.parse(products);
 console.log(parseproduct);
 
-for (let i = 0; i < 1 ; i++) {
-document.querySelector(".row").innerHTML +=`
+for (let i = 0; i < 1; i++) {
+  document.querySelector(".row").innerHTML += `
 <div class="col">
         <img src="./M_keyboard_page.webp" height="400px" width="auto">
       </div>
@@ -213,37 +213,41 @@ document.querySelector(".row").innerHTML +=`
 
 
 // quantity  and price calculation
-    const cards = document.querySelectorAll(".p-detail");  
-    cards.forEach(card => {
-      const plus = card.querySelector(".plus");
-      const minus = card.querySelector(".minus");
-      const qty = card.querySelector(".qty");
-      const priceDisplay = card.querySelector(".price");
-  
-      let quantity = 1;
-      const pricePerItem = parseFloat(priceDisplay.innerText);
-  
-      function updatePrice() {
-        const totalPrice = quantity * pricePerItem;
-        priceDisplay.innerText = `Rs. $${totalPrice.toFixed(2)}`;
-      }
-  
-      plus.addEventListener("click", () => {
-        quantity++;
-        qty.textContent = quantity;
-        updatePrice();
-      });
-  
-      minus.addEventListener("click", () => {
-        if (quantity > 1) {
-          quantity--;
-        }
-        qty.textContent = quantity;
-        updatePrice();
-      });
-  
-      // Initial update
-      updatePrice();
-    });
-  
+const cards = document.querySelectorAll(".p-detail");
+cards.forEach(card => {
+  const plus = card.querySelector(".plus");
+  const minus = card.querySelector(".minus");
+  const qty = card.querySelector(".qty");
+  const priceDisplay = card.querySelector(".price");
+
+  let quantity = 1;
+  const pricePerItem = parseFloat(priceDisplay.innerText);
+
+  function updatePrice() {
+    const totalPrice = quantity * pricePerItem;
+    priceDisplay.innerText = `Rs. $${totalPrice.toFixed(2)}`;
+  }
+
+  plus.addEventListener("click", () => {
+    quantity++;
+    qty.textContent = quantity;
+    updatePrice();
+  });
+
+  minus.addEventListener("click", () => {
+    if (quantity > 1) {
+      quantity--;
+    }
+    qty.textContent = quantity;
+    updatePrice();
+  });
+
+  // Initial update
+  updatePrice();
+});
+
+
+
+
+
 

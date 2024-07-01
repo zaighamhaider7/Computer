@@ -192,7 +192,10 @@ document.querySelector(".row-one").innerHTML +=
            <img src="${parseproduct[i].image}" class="card-img-top" alt="Product imagessss...">
           <div class="card-body">
       <a href="${parseproduct[i].Product_Page}"><h4 class="card-title">${parseproduct[i].title}</h4></a>
-      <h5>Rs.${parseproduct[i].price}</h5>
+      <div class="price-btn">
+        <h5> $${parseproduct[i].price}</h5>
+        <button class="addtocart">Add to cart</button>
+        </div>
         </div>
        </div>
           </div>
@@ -245,7 +248,7 @@ if (!productsShown) {  // Check if products have not been shown yet
                         <img src="${parseproduct[i].image}" class="card-img-top" alt="Product image">
                         <div class="card-body">
                             <a href="store.html"><h4 class="card-title">${parseproduct[i].title}</h4></a>
-                            <h5>Rs.${parseproduct[i].price}</h5>
+                            <h5>Price: $${parseproduct[i].price}</h5>
                         </div>
                     </div>
                 </div>
@@ -267,6 +270,7 @@ document.getElementById("viewmore").style.display = "block";
 document.getElementById("viewless").style.display = "none";
 document.querySelector(".row-two").style.display = "none"
 })
+
 
 
 

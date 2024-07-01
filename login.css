@@ -134,15 +134,6 @@
      }
  }
 
- form a {
-     color: blue;
-     text-decoration: underline;
- }
-
- form a:hover {
-     color: black;
-     text-decoration: underline;
- }
 
  #login-btn {
      height: 2.5em;

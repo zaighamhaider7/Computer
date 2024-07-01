@@ -11,6 +11,8 @@
      <!-- BS JS LINK -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
       "></script>
+      <!-- jquery link -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
    
 </head>
 <body>
@@ -71,6 +73,7 @@
        </div>
 
        <!-- second section -->
+       <!-- <input type="text" id="serach"> -->
 
        <section id="second">
         <h2>
@@ -90,16 +93,26 @@
         </div>
        </section>
 
+       
 
-<section id="banner"></section>
-
-
-
+<section class="container" id="banner"></section>
 
 
 
 
 
+
+<!-- <script>
+ $(document).ready(function(){
+  $("#serach").on("keyup", function() {
+    let value = $(this).val().toLowerCase();
+    $(".card").filter(function() {
+      $(this).toggle($(this).find(".card-title").text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});
+
+</script> -->
 
 
 
@@ -110,35 +123,4 @@
 
 
 
-       <!-- <div class="row">
-            <div class="col col-lg-4 col-md-6">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col col-lg-4 col-md-6">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col col-lg-4 col-md-6">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-          </div> -->
+     
